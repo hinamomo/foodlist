@@ -5,15 +5,29 @@
     <%= form_for(@user, html: {class: "form-horizontal"}) do |f| %>
 
       <%= f.label :old_id %>
-      <%=f.text_field :old_id, class: 'form-control' %>
+      <%= f.collection_select :old_id, Old.all, :old_id, :old_val, 
+          :prompt => "年代を選択してください" %>
 
       <%= f.label :sex_id %>      
-      <%=f.text_area :sex_id, class: 'form-control' %>
+      <%= f.radio_button :sex_id, 0 %>男性
+      <%= f.radio_button :sex_id, 1 %>女性
 
+　　　<br><br>
       <%= f.label :activity_level %>
-      <%=f.text_field :activity_level, class: 'form-control' %>
+      <%= f.collection_select :activity_level, Level.all, :activity_level, :activity_val, 
+          :prompt => "活動レベルを選択してください" %>
+          
+      <br>
+      <h2>※身体活動レベル</h2>
+      <h2>I(低い)-->生活の大部分が座位で、静的な活動が中心の場合</h2>
+      <h2>II(普通)-->座位中心の仕事だが,職場内での移動や立位での<br>
+              作業・接客等、あるいは通勤・買い物・家事・軽い<br>
+              スポーツ等のいずれかを含む場合</h2>
+      <h2>III(高い)-->移動や立位の多い仕事への従事者。あるいは、<br>
+              スポーツなど余暇における活発な運動習慣を持っている場合</h2>
 
       <%=f.submit "Edit my profile" , class: "btn btn-large btn-primary" %>
     <% end %>
+    
   </div>
 </div>
