@@ -5,7 +5,7 @@ class CreateSmallItems < ActiveRecord::Migration
       t.string :middle_id
       t.string :small_val
       t.integer :weight
-      t.integer :point
+      t.float :point
 
       t.timestamps null: false
     end

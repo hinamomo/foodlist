@@ -11,23 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528132310) do
+ActiveRecord::Schema.define(version: 20160529073448) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "old_id"
     t.string   "sex_id"
     t.string   "activity_level"
-    t.integer  "first_1"
-    t.integer  "first_2"
-    t.integer  "second_1"
-    t.integer  "second_2"
-    t.integer  "third_1"
-    t.integer  "third_2"
-    t.integer  "fourth_1"
-    t.integer  "fourth_2"
-    t.integer  "sum"
+    t.float    "first_1"
+    t.float    "first_2"
+    t.float    "second_1"
+    t.float    "second_2"
+    t.float    "third_1"
+    t.float    "third_2"
+    t.float    "fourth_1"
+    t.float    "fourth_2"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.float    "third_3"
+    t.float    "sum"
   end
 
   create_table "large_items", force: :cascade do |t|
@@ -64,22 +65,22 @@ ActiveRecord::Schema.define(version: 20160528132310) do
     t.string   "middle_id"
     t.string   "small_val"
     t.integer  "weight"
-    t.integer  "point"
+    t.float    "point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "user_items", force: :cascade do |t|
     t.string   "user_id"
-    t.integer  "first_1_sum"
-    t.integer  "first_2_sum"
-    t.integer  "second_1_sum"
-    t.integer  "second_2_sum"
-    t.integer  "third_1_sum"
-    t.integer  "third_2_sum"
-    t.integer  "fourth_1_sum"
-    t.integer  "fourth_2_sum"
-    t.integer  "sum_sum"
+    t.float    "first_1_sum"
+    t.float    "first_2_sum"
+    t.float    "second_1_sum"
+    t.float    "second_2_sum"
+    t.float    "third_1_sum"
+    t.float    "third_2_sum"
+    t.float    "fourth_1_sum"
+    t.float    "fourth_2_sum"
+    t.float    "sum_sum"
     t.string   "first_1_flg"
     t.string   "first_2_flg"
     t.string   "second_1_flg"
