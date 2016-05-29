@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
   
   def user_params_profile
-    params.require(:user).permit(:email, :introduction, :area, :homepage, :birthday)
+    params.require(:user).permit(:old_id, :sex_id, :activity_level)
   end
   
   def correct_user

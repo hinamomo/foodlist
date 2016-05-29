@@ -1,0 +1,17 @@
+    <label>old:</label>
+      <% old = Old.where(old_id: @user.old_id) %>
+      <%= old[0].old_val %>
+    <br>
+
+    <label>sex:</label>
+      <% if @user.sex_id == "0" then %>
+        男性
+      <% else %>
+        女性
+      <% end %>
+    <br>
+
+    <label>activity_level:</label>
+      <% activity = Level.where(activity_level: @user.activity_level) %>
+      <%= activity[0].activity_val %>
+    <br>
