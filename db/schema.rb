@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530014623) do
+ActiveRecord::Schema.define(version: 20160530152254) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "old_id"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160530014623) do
     t.float    "second_2_sum"
     t.float    "third_1_sum"
     t.float    "third_2_sum"
+    t.float    "third_3_sum"
     t.float    "fourth_1_sum"
     t.float    "fourth_2_sum"
     t.float    "sum_sum"
@@ -88,13 +89,14 @@ ActiveRecord::Schema.define(version: 20160530014623) do
     t.string   "second_2_flg"
     t.string   "third_1_flg"
     t.string   "third_2_flg"
+    t.string   "third_3_flg"
     t.string   "fourth_1_flg"
     t.string   "fourth_2_flg"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.float    "third_3_sum"
-    t.string   "third_3_flg"
   end
+
+  add_index "user_items", ["user_id"], name: "index_user_items_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -1,6 +1,7 @@
 class CreateUserItems < ActiveRecord::Migration
   def change
     create_table :user_items do |t|
+      t.references :user, index: true, foreign_key: true
       t.string :user_id
       t.float :first_1_sum
       t.float :first_2_sum
@@ -8,6 +9,7 @@ class CreateUserItems < ActiveRecord::Migration
       t.float :second_2_sum
       t.float :third_1_sum
       t.float :third_2_sum
+      t.float :third_3_sum
       t.float :fourth_1_sum
       t.float :fourth_2_sum
       t.float :sum_sum
@@ -17,6 +19,7 @@ class CreateUserItems < ActiveRecord::Migration
       t.string :second_2_flg
       t.string :third_1_flg
       t.string :third_2_flg
+      t.string :third_3_flg
       t.string :fourth_1_flg
       t.string :fourth_2_flg
 
