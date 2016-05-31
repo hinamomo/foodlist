@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530152254) do
+ActiveRecord::Schema.define(version: 20160531051404) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "old_id"
@@ -46,12 +46,15 @@ ActiveRecord::Schema.define(version: 20160530152254) do
   end
 
   create_table "middle_items", force: :cascade do |t|
+    t.integer  "large_id"
     t.string   "middle_id"
-    t.string   "large_id"
-    t.string   "middle_value"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "middle_val"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "middle_items", ["large_id", "created_at"], name: "index_middle_items_on_large_id_and_created_at"
+  add_index "middle_items", ["large_id"], name: "index_middle_items_on_large_id"
 
   create_table "olds", force: :cascade do |t|
     t.string   "old_id"
@@ -61,18 +64,33 @@ ActiveRecord::Schema.define(version: 20160530152254) do
   end
 
   create_table "small_items", force: :cascade do |t|
+    t.integer  "large_id"
+    t.integer  "middle_id"
+    t.string   "small_id"
+    t.string   "small_val"
+    t.integer  "weight"
+    t.integer  "point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "small_items", ["large_id"], name: "index_small_items_on_large_id"
+  add_index "small_items", ["middle_id"], name: "index_small_items_on_middle_id"
+
+  create_table "user_foods", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "large_id"
     t.string   "middle_id"
     t.string   "small_val"
     t.integer  "weight"
-    t.float    "point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "small_id"
   end
 
+  add_index "user_foods", ["user_id"], name: "index_user_foods_on_user_id"
+
   create_table "user_items", force: :cascade do |t|
-    t.string   "user_id"
+    t.integer  "user_id"
     t.float    "first_1_sum"
     t.float    "first_2_sum"
     t.float    "second_1_sum"

@@ -8,4 +8,13 @@
     </section>
     <%= render 'profile' %>
   </aside>
+  <div class="col-md-8">
+    <% if @user.user_foods.any? %>
+      <h3>Foods (<%= @user.user_foods.count %>)</h3>
+      
+      <ol class="user_foods">
+        <%= render @user_foods %>
+      </ol>
+    <% end %>
+  </div>
 </div>

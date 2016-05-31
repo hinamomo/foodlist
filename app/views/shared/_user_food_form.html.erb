@@ -1,0 +1,21 @@
+<%= form_for(@user_food) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :large_id %>
+      <%= f.collection_select :large_id, LargeItem.all, :large_id, :large_val, 
+          :prompt => "大分類を選択してください" %>
+          
+    <%= f.label :middle_id %>
+      <%= f.collection_select :middle_id, MiddleItem.all, :middle_id, :middle_val, 
+          :prompt => "中分類を選択してください" %>
+          
+    <%= f.label :small_id %>
+      <%= f.collection_select :small_val, SmallItem.all, :small_val, :small_val, 
+          :prompt => "小分類を選択してください" %>
+          
+    <%= f.label :weight %>
+      <%= f.text_field :weight %>
+          
+  </div>
+  <%= f.submit "Food add", class: "btn btn-primary" %>
+<% end %>

@@ -2,7 +2,6 @@ class CreateUserItems < ActiveRecord::Migration
   def change
     create_table :user_items do |t|
       t.references :user, index: true, foreign_key: true
-      t.string :user_id
       t.float :first_1_sum
       t.float :first_2_sum
       t.float :second_1_sum
