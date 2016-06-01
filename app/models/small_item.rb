@@ -1,4 +1,3 @@
 class SmallItem < ActiveRecord::Base
-  belongs_to :large
-  belongs_to :middle
+  belongs_to :middle_item
 end

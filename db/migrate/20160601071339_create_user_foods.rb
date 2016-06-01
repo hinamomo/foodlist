@@ -4,7 +4,7 @@ class CreateUserFoods < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true
       t.string :large_id
       t.string :middle_id
-      t.string :small_val
+      t.string :small_id
       t.integer :weight
 
       t.timestamps null: false

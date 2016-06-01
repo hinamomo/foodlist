@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531051404) do
+ActiveRecord::Schema.define(version: 20160601071339) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "old_id"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20160531051404) do
   end
 
   create_table "large_items", force: :cascade do |t|
-    t.string   "large_id"
     t.string   "large_val"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,15 +45,13 @@ ActiveRecord::Schema.define(version: 20160531051404) do
   end
 
   create_table "middle_items", force: :cascade do |t|
-    t.integer  "large_id"
-    t.string   "middle_id"
+    t.integer  "large_item_id"
     t.string   "middle_val"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "middle_items", ["large_id", "created_at"], name: "index_middle_items_on_large_id_and_created_at"
-  add_index "middle_items", ["large_id"], name: "index_middle_items_on_large_id"
+  add_index "middle_items", ["large_item_id"], name: "index_middle_items_on_large_item_id"
 
   create_table "olds", force: :cascade do |t|
     t.string   "old_id"
@@ -64,24 +61,21 @@ ActiveRecord::Schema.define(version: 20160531051404) do
   end
 
   create_table "small_items", force: :cascade do |t|
-    t.integer  "large_id"
-    t.integer  "middle_id"
-    t.string   "small_id"
+    t.integer  "middle_item_id"
     t.string   "small_val"
     t.integer  "weight"
-    t.integer  "point"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.float    "point"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  add_index "small_items", ["large_id"], name: "index_small_items_on_large_id"
-  add_index "small_items", ["middle_id"], name: "index_small_items_on_middle_id"
+  add_index "small_items", ["middle_item_id"], name: "index_small_items_on_middle_item_id"
 
   create_table "user_foods", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "large_id"
     t.string   "middle_id"
-    t.string   "small_val"
+    t.string   "small_id"
     t.integer  "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

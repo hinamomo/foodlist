@@ -8,12 +8,18 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get 'signup' , to: 'users#new'
   get 'edit', to:'users#edit'
-
+  
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :user_foods
-  resources :large_itams, only: []do
-    resources :middle_items, only: :index
+  resources :user_foods do
+    collection do
+      get :middle_item_select
+      get :small_item_select
+    end
+    # collection do
+    #   get :small_item_select
+    # end
   end
-  root 'user_foods#index'
+  
+  
 end
