@@ -19,4 +19,5 @@ jQuery(function(){
   $('#user_food_large_id').change(function(){
   var large_id = $("#user_food_large_id").val();
   $.get("large_select.js?large_id=" + large_id);
+  })
 });

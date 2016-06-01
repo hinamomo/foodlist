@@ -9,9 +9,9 @@ $(document).on 'change', '#user_food_large_id', ->
       large_id: $(this).val()
     }
   ).done (data) ->
-    $('#f_middle_id').html(data)
+    $('#user_food_middle_id').html(data)
     
-$(document).on 'change', '#f_middle_id', ->
+$(document).on 'change', '#user_food_middle_id', ->
   $.ajax(
     type: 'GET'
     url: '/user_foods/small_item_select'
@@ -19,4 +19,4 @@ $(document).on 'change', '#f_middle_id', ->
       middle_id: $(this).val()
     }
   ).done (data) ->
-    $('#f_small_id').html(data)
+    $('#user_food_small_id').html(data)

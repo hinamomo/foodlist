@@ -13,19 +13,19 @@
     <%= f.label :middle %><br>
     <%= @user_food.large_id %>
     <% if @user_food.large_id.nil? %>
-      <%= render 'shared/middle_item_select', {:f => f, :large_id => LargeItem.first.id} %>
+      <%= render 'shared/middle_item_select', {:user_food => f, :large_id => LargeItem.first.id} %>
     <% else %>
-      <%= render 'shared/middle_item_select', {:f => f, :large_id => @user_food.large_id} %>
+      <%= render 'shared/middle_item_select', {:user_food => f, :large_id => @user_food.large_id} %>
     <% end %>
   </div>
   
   <%# 小分類 %>
   <div class="field">
     <%= f.label :small %><br>
-    <% if @user_food.large_id.nil? %>
-      <%= render 'shared/small_item_select', {:f => f, :middle_id => MiddleItem.first.id} %>
+    <% if @user_food.middle_id.nil? %>
+      <%= render 'shared/small_item_select', {:user_food => f, :middle_id => MiddleItem.first.id} %>
     <% else %>
-      <%= render 'shared/small_item_select', {:f => f, :middle_id => @user_food.middle_id} %>
+      <%= render 'shared/small_item_select', {:user_food => f, :middle_id => @user_food.middle_id} %>
     <% end %>
   </div>
 
