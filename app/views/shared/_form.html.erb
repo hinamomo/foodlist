@@ -11,7 +11,6 @@
   <%# 中分類 %>
   <div class="field">
     <%= f.label :middle %><br>
-    <%= @user_food.large_id %>
     <% if @user_food.large_id.nil? %>
       <%= render 'shared/middle_item_select', {:user_food => f, :large_id => LargeItem.first.id} %>
     <% else %>
