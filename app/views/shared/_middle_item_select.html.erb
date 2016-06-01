@@ -1,2 +1,2 @@
-<%= collection_select :f, :middle_id, MiddleItem.where(large_item_id: large_id), :id, :middle_val, 
+<%= f.collection_select :middle_id, MiddleItem.where(large_item_id: large_id), :id, :middle_val, 
           :prompt => "中分類を選択してください" %>

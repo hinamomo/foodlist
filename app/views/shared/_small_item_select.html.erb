@@ -1,2 +1,2 @@
-<%= collection_select :f, :small_id, SmallItem.where(middle_item_id: middle_id), :id, :small_val, 
+<%= f.collection_select :small_id, SmallItem.where(middle_item_id: middle_id), :id, :small_val, 
           :prompt => "小分類を選択してください" %>

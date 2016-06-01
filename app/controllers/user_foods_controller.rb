@@ -14,9 +14,7 @@ class UserFoodsController < ApplicationController
   end
 
   def create
-    
-    puts food_params
-    @user_food = current_user.user_foods.build(food_params)
+    @user_food = current_user.user_foods.build(user_food_params)
 
     if @user_food.save
       flash[:success] = "UserFood created!"
@@ -30,9 +28,6 @@ class UserFoodsController < ApplicationController
   
   private
   def user_food_params
-    params.require(:user_food).permit(:large_id, :weight)
-  end
-  def f_params
-    params.require(:f).permit(:middle_id, :small_id)
+    params.require(:user_food).permit(:large_id, :middle_id, :small_id, :weight)
   end
 end
