@@ -4,15 +4,16 @@ class CreateActivities < ActiveRecord::Migration
       t.string :old_id
       t.string :sex_id
       t.string :activity_level
-      t.float :first_1
-      t.float :first_2
-      t.float :second_1
-      t.float :second_2
-      t.float :third_1
-      t.float :third_2
-      t.float :fourth_1
-      t.float :fourth_2
-      t.string :float
+      t.float :large1
+      t.float :large2
+      t.float :large3
+      t.float :large4
+      t.float :large5
+      t.float :large6
+      t.float :large7
+      t.float :large8
+      t.float :large9
+      t.float :sum
 
       t.timestamps null: false
     end

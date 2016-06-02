@@ -10,8 +10,9 @@
     </aside>
     <div class="col-md-8">
       <% if @user_foods.any? %>
-        <h3>Foods (<%= @user_foods.count %>)</h3>
-      
+        <h3>今日食べた品目 (<%= @user_foods.count %>)</h3>
+        <span><%= link_to "足りない品目を確認", current_user %></span>
+        
         <ol class="user_foods">
           <%= render @user_foods %>
         </ol>

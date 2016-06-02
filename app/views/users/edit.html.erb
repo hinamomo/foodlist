@@ -5,7 +5,7 @@
     <%= form_for(@user, html: {class: "form-horizontal"}) do |f| %>
 
       <%= f.label :old_id %>
-      <%= f.collection_select :old_id, Old.all, :old_id, :old_val, 
+      <%= f.collection_select :old_id, Old.all, :id, :old_val, 
           :prompt => "年代を選択してください" %>
 
       <%= f.label :sex_id %>      
@@ -14,7 +14,7 @@
 
 　　　<br><br>
       <%= f.label :activity_level %>
-      <%= f.collection_select :activity_level, Level.all, :activity_level, :activity_val, 
+      <%= f.collection_select :activity_level, Level.all, :id, :activity_val, 
           :prompt => "活動レベルを選択してください" %>
           
       <br>

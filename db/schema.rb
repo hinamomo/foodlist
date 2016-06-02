@@ -11,24 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601071339) do
+ActiveRecord::Schema.define(version: 20160602042646) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "old_id"
     t.string   "sex_id"
     t.string   "activity_level"
-    t.float    "first_1"
-    t.float    "first_2"
-    t.float    "second_1"
-    t.float    "second_2"
-    t.float    "third_1"
-    t.float    "third_2"
-    t.float    "fourth_1"
-    t.float    "fourth_2"
+    t.float    "large1"
+    t.float    "large2"
+    t.float    "large3"
+    t.float    "large4"
+    t.float    "large5"
+    t.float    "large6"
+    t.float    "large7"
+    t.float    "large8"
+    t.float    "large9"
+    t.float    "sum"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.float    "third_3"
-    t.float    "sum"
   end
 
   create_table "large_items", force: :cascade do |t|
@@ -38,10 +38,9 @@ ActiveRecord::Schema.define(version: 20160601071339) do
   end
 
   create_table "levels", force: :cascade do |t|
-    t.string   "activity_level"
     t.string   "activity_val"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "middle_items", force: :cascade do |t|
@@ -54,7 +53,6 @@ ActiveRecord::Schema.define(version: 20160601071339) do
   add_index "middle_items", ["large_item_id"], name: "index_middle_items_on_large_item_id"
 
   create_table "olds", force: :cascade do |t|
-    t.string   "old_id"
     t.string   "old_val"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -85,27 +83,27 @@ ActiveRecord::Schema.define(version: 20160601071339) do
 
   create_table "user_items", force: :cascade do |t|
     t.integer  "user_id"
-    t.float    "first_1_sum"
-    t.float    "first_2_sum"
-    t.float    "second_1_sum"
-    t.float    "second_2_sum"
-    t.float    "third_1_sum"
-    t.float    "third_2_sum"
-    t.float    "third_3_sum"
-    t.float    "fourth_1_sum"
-    t.float    "fourth_2_sum"
+    t.float    "large1_sum"
+    t.float    "large2_sum"
+    t.float    "large3_sum"
+    t.float    "large4_sum"
+    t.float    "large5_sum"
+    t.float    "large6_sum"
+    t.float    "large7_sum"
+    t.float    "large8_sum"
+    t.float    "large9_sum"
     t.float    "sum_sum"
-    t.string   "first_1_flg"
-    t.string   "first_2_flg"
-    t.string   "second_1_flg"
-    t.string   "second_2_flg"
-    t.string   "third_1_flg"
-    t.string   "third_2_flg"
-    t.string   "third_3_flg"
-    t.string   "fourth_1_flg"
-    t.string   "fourth_2_flg"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "large1_flg"
+    t.string   "large2_flg"
+    t.string   "large3_flg"
+    t.string   "large4_flg"
+    t.string   "large5_flg"
+    t.string   "large6_flg"
+    t.string   "large7_flg"
+    t.string   "large8_flg"
+    t.string   "large9_flg"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "user_items", ["user_id"], name: "index_user_items_on_user_id"

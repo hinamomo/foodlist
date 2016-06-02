@@ -16,9 +16,6 @@ Rails.application.routes.draw do
       get :middle_item_select
       get :small_item_select
     end
-    # collection do
-    #   get :small_item_select
-    # end
   end
   
   
