@@ -1,0 +1,46 @@
+<h2>品目ポイント計算結果</h2>
+<% large = LargeItem.all %>
+<br>
+<table class="type09">
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= large[0].large_val %></th>
+      <th><%= large[1].large_val %></th>
+      <th><%= large[2].large_val %></th>
+      <th><%= large[3].large_val %></th>
+      <th><%= large[4].large_val %></th>
+      <th><%= large[5].large_val %></th>
+      <th><%= large[6].large_val %></th>
+      <th><%= large[7].large_val %></th>
+      <th><%= large[8].large_val %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th>標準値</th>
+      <td><%= @standard[0].large1 %></td>
+      <td><%= @standard[0].large2 %></td>
+      <td><%= @standard[0].large3 %></td>
+      <td><%= @standard[0].large4 %></td>
+      <td><%= @standard[0].large5 %></td>
+      <td><%= @standard[0].large6 %></td>
+      <td><%= @standard[0].large7 %></td>
+      <td><%= @standard[0].large8 %></td>
+      <td><%= @standard[0].large9 %></td>
+    </tr>
+    <tr>
+      <th>実際値</th>
+      <td><%= @user_item[0].large1_sum %></td>
+      <td><%= @user_item[0].large2_sum %></td>
+      <td><%= @user_item[0].large3_sum %></td>
+      <td><%= @user_item[0].large4_sum %></td>
+      <td><%= @user_item[0].large5_sum %></td>
+      <td><%= @user_item[0].large6_sum %></td>
+      <td><%= @user_item[0].large7_sum %></td>
+      <td><%= @user_item[0].large8_sum %></td>
+      <td><%= @user_item[0].large9_sum %></td>
+    </tr>
+  </tbody>
+</table>

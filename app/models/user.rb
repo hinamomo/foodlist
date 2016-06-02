@@ -12,4 +12,12 @@ class User < ActiveRecord::Base
   def food_items
     UserFood.where(user_id: self.id)
   end
+  
+  def user_items
+    UserItem.where(user_id: self.id)
+  end
+  
+  def standard
+    Activity.where(old_id: self.old_id, sex_id: self.sex_id, activity_level: self.activity_level)
+  end
 end
