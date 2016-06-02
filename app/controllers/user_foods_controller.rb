@@ -20,6 +20,7 @@ class UserFoodsController < ApplicationController
       flash[:success] = "UserFood created!"
       redirect_to root_url
     else
+      @user_foods = current_user.user_foods.order(created_at: :desc)
       flash.now[:alert] = "UserFood can't created!"
       render 'static_pages/home'
     end
