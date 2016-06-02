@@ -1,0 +1,12 @@
+<li id="user_foods-<%= user_food.id %>">
+  <%= link_to gravatar_for(user_food.user, size:50), user_food.user %>
+  <span class="user"><%= link_to user_food.user.name, user_food.user %></span>
+  <span class="content"><%= user_food.large_id %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(user_food.created_at) %> ago.
+    <% if current_user == user_food.user %>
+      <%= link_to "delete", user_food, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>

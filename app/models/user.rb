@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   has_secure_password
   
   has_many :user_foods
+  
+  def food_items
+    UserFood.where(user_id: self.id)
+  end
 end

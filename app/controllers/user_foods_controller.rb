@@ -20,10 +20,17 @@ class UserFoodsController < ApplicationController
       flash[:success] = "UserFood created!"
       redirect_to root_url
     else
-      @user_foods = UserFood.all
       flash.now[:alert] = "UserFood can't created!"
       render 'static_pages/home'
     end
+  end
+  
+  def destroy
+    @user_food = current_user.user_foods.find_by(id: params[:id])
+    return redirect_to root_url if @user_food.nil?
+    @user_food.destroy
+    flash[:success] = "Foodlist deleted"
+    redirect_to request.referrer || root_url
   end
   
   private
