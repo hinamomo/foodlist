@@ -6,10 +6,12 @@
     <% middle = MiddleItem.where(id: user_food.middle_id) %>
     <% small = SmallItem.where(id: user_food.small_id) %>
   
-    <%= small[0].small_val %>
-    (中分類：<%= middle[0].middle_val %>
-    小分類：<%= large[0].large_val %>)
-    <%= user_food.weight %> グラム
+    <% if large[0] != nil and middle[0] != nil and small[0] != nil %>
+      <%= small[0].small_val %>
+      (中分類：<%= middle[0].middle_val %>
+      小分類：<%= large[0].large_val %>)
+      <%= user_food.weight %> グラム
+    <% end %>
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(user_food.created_at) %> ago.

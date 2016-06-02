@@ -99,47 +99,47 @@ Activity.find_or_create_by(old_id: '9', sex_id: '1', activity_level:'3', large1:
 Activity.find_or_create_by(old_id: '13', sex_id: '1', activity_level:'3', large1: '2.0', large2: '1.0', large3: '3.0', large4:'2.0' , large5: '1.0', large6: '1.0', large7: '1.0', large8: '16.0', large9:'2.5' , sum: '30.0')
 
 #大分類
-large_item1 = LargeItem.find_or_create_by(large_val: '乳・乳製品')
+large_item1 = LargeItem.find_or_create_by(id: 1, large_val: '乳・乳製品')
 middle_item1 = large_item1.middle_items.find_or_create_by(middle_val: 'チーズ')
 middle_item1.small_items.find_or_create_by(small_val: 'エメンタールチーズ', weight: '19', point: '1.0')
 middle_item1.small_items.find_or_create_by(small_val: 'カマンベールチーズ', weight: '26', point: '1.0')
 
-large_item2 = LargeItem.find_or_create_by(large_val: '卵')
+large_item2 = LargeItem.find_or_create_by(id: 2, large_val: '卵')
 middle_item2 = large_item2.middle_items.find_or_create_by(middle_val: '中卵')
 middle_item2.small_items.find_or_create_by(small_val: '小卵１', weight: '19', point: '1.0')
 middle_item2.small_items.find_or_create_by(small_val: '小卵２', weight: '26', point: '1.0')
 
-large_item3 = LargeItem.find_or_create_by(large_val: '魚介・肉')
+large_item3 = LargeItem.find_or_create_by(id: 3, large_val: '魚介・肉')
 middle_item3 = large_item3.middle_items.find_or_create_by(middle_val: '中魚介・肉')
 middle_item3.small_items.find_or_create_by(small_val: '小魚介・肉１', weight: '190', point: '0.2')
 middle_item3.small_items.find_or_create_by(small_val: '小魚介・肉２', weight: '260', point: '0.49')
 
-large_item4 = LargeItem.find_or_create_by(large_val: '豆・豆製品')
+large_item4 = LargeItem.find_or_create_by(id: 4, large_val: '豆・豆製品')
 middle_item4 = large_item4.middle_items.find_or_create_by(middle_val: '中豆・豆製品')
 middle_item4.small_items.find_or_create_by(small_val: '小豆・豆製品１', weight: '50', point: '1')
 middle_item4.small_items.find_or_create_by(small_val: '小豆・豆製品２', weight: '50', point: '0.98')
 
-large_item5 = LargeItem.find_or_create_by(large_val: '野菜')
+large_item5 = LargeItem.find_or_create_by(id: 5, large_val: '野菜')
 middle_item5 = large_item5.middle_items.find_or_create_by(middle_val: '中野菜')
 middle_item5.small_items.find_or_create_by(small_val: '小野菜１', weight: '50', point: '1')
 middle_item5.small_items.find_or_create_by(small_val: '小野菜２', weight: '50', point: '0.98')
 
-large_item6 = LargeItem.find_or_create_by(large_val: '芋類')
+large_item6 = LargeItem.find_or_create_by(id: 6, large_val: '芋類')
 middle_item6 = large_item6.middle_items.find_or_create_by(middle_val: '中芋類')
 middle_item6.small_items.find_or_create_by(small_val: '小芋類１', weight: '50', point: '1')
 middle_item6.small_items.find_or_create_by(small_val: '小芋類２', weight: '50', point: '0.98')
 
-large_item7 = LargeItem.find_or_create_by(large_val: '果物')
+large_item7 = LargeItem.find_or_create_by(id: 7, large_val: '果物')
 middle_item7 = large_item7.middle_items.find_or_create_by(middle_val: '中果物')
 middle_item7.small_items.find_or_create_by(small_val: '小果物１', weight: '50', point: '1')
 middle_item7.small_items.find_or_create_by(small_val: '小果物２', weight: '50', point: '0.98')
 
-large_item8 = LargeItem.find_or_create_by(large_val: '穀物')
+large_item8 = LargeItem.find_or_create_by(id: 8, large_val: '穀物')
 middle_item8 = large_item8.middle_items.find_or_create_by(middle_val: '中穀物')
 middle_item8.small_items.find_or_create_by(small_val: '小穀物１', weight: '50', point: '1')
 middle_item8.small_items.find_or_create_by(small_val: '小穀物２', weight: '50', point: '0.98')
 
-large_item9 = LargeItem.find_or_create_by(large_val: '油脂')
+large_item9 = LargeItem.find_or_create_by(id: 9, large_val: '油脂')
 middle_item9 = large_item9.middle_items.find_or_create_by(middle_val: '中油脂')
 middle_item9.small_items.find_or_create_by(small_val: '小油脂１', weight: '50', point: '1')
 middle_item9.small_items.find_or_create_by(small_val: '小油脂２', weight: '50', point: '0.98')

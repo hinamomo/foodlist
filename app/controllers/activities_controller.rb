@@ -26,25 +26,32 @@ class ActivitiesController < ApplicationController
     foodlist.each do |food|
       small = SmallItem.where(id: food.small_id)
       
-      case food.large_id
-      when 1 then
-        large1_sum += food.weight / small.weight * small.point
-      when 2 then
-        large2_sum += food.weight / small.weight * small.point
-      when 3 then
-        large3_sum += food.weight / small.weight * small.point
-      when 4 then
-        large4_sum += food.weight / small.weight * small.point
-      when 5 then
-        large5_sum += food.weight / small.weight * small.point
-      when 6 then
-        large6_sum += food.weight / small.weight * small.point
-      when 7 then
-        large7_sum += food.weight / small.weight * small.point
-      when 8 then
-        large8_sum += food.weight / small.weight * small.point
-      when 9 then
-        large9_sum += food.weight / small.weight * small.point
+    case food.large_id
+      when "1" then
+        large1_sum += food.weight / small[0].weight * small[0].point
+        
+      puts "food.weight------------------------->"
+      puts food.weight
+      
+      puts "large1_sum------------------------->"
+      puts large1_sum
+      
+      when "2" then
+        large2_sum += food.weight / small[0].weight * small[0].point
+      when "3" then
+        large3_sum += food.weight / small[0].weight * small[0].point
+      when "4" then
+        large4_sum += food.weight / small[0].weight * small[0].point
+      when "5" then
+        large5_sum += food.weight / small[0].weight * small[0].point
+      when "6" then
+        large6_sum += food.weight / small[0].weight * small[0].point
+      when "7" then
+        large7_sum += food.weight / small[0].weight * small[0].point
+      when "8" then
+        large8_sum += food.weight / small[0].weight * small[0].point
+      when "9" then
+        large9_sum += food.weight / small[0].weight * small[0].point
       else
       end
     end
@@ -104,7 +111,7 @@ class ActivitiesController < ApplicationController
                     large7_flg: large7_flg, large8_flg: large8_flg, large9_flg: large9_flg,
     )
     
-    @user_item = current_user.user_items
+    @user_item = current_user.user_items.order(created_at: :desc)
     @standard = current_user.standard
   end
 end
