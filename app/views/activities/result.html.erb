@@ -7,7 +7,13 @@
       <th></th>
       <th><%= large[0].large_val %></th>
       <th><%= large[1].large_val %></th>
-      <th><%= large[2].large_val %></th>
+      
+      <% if @user_item[0].large3_flg == "1" %>
+        <th><%= link_to large[2].large_val, rakuten_path("id=10") %></th>
+      <% else %>
+        <th><%= large[2].large_val %></th>
+      <% end %>
+      
       <th><%= large[3].large_val %></th>
       <th><%= large[4].large_val %></th>
       <th><%= large[5].large_val %></th>
