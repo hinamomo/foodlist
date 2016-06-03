@@ -32,27 +32,77 @@ class ActivitiesController < ApplicationController
         
       puts "food.weight------------------------->"
       puts food.weight
-      
       puts "large1_sum------------------------->"
       puts large1_sum
       
       when "2" then
         large2_sum += food.weight / small[0].weight * small[0].point
+        
+      puts "food.weight------------------------->"
+      puts food.weight
+      puts "large2_sum------------------------->"
+      puts large2_sum
+      
       when "3" then
         large3_sum += food.weight / small[0].weight * small[0].point
+        
+      puts "food.weight------------------------->"
+      puts food.weight
+      puts "small[0].weight------------------------->"
+      puts small[0].weight
+      puts "small[0].point------------------------->"
+      puts small[0].point
+      puts "large3_sum------------------------->"
+      puts large3_sum
+      
       when "4" then
         large4_sum += food.weight / small[0].weight * small[0].point
+        
+      puts "food.weight------------------------->"
+      puts food.weight
+      puts "large4_sum------------------------->"
+      puts large4_sum
+      
       when "5" then
         large5_sum += food.weight / small[0].weight * small[0].point
+        
+      puts "food.weight------------------------->"
+      puts food.weight
+      puts "large5_sum------------------------->"
+      puts large5_sum
+      
       when "6" then
         large6_sum += food.weight / small[0].weight * small[0].point
+        
+      puts "food.weight------------------------->"
+      puts food.weight
+      puts "large6_sum------------------------->"
+      puts large6_sum
+      
       when "7" then
         large7_sum += food.weight / small[0].weight * small[0].point
+        
+      puts "food.weight------------------------->"
+      puts food.weight
+      puts "large7_sum------------------------->"
+      puts large7_sum
+      
       when "8" then
         large8_sum += food.weight / small[0].weight * small[0].point
+        
+      puts "food.weight------------------------->"
+      puts food.weight
+      puts "large8_sum------------------------->"
+      puts large8_sum
+      
       when "9" then
         large9_sum += food.weight / small[0].weight * small[0].point
-      else
+        
+      puts "food.weight------------------------->"
+      puts food.weight
+      puts "large9_sum------------------------->"
+      puts large9_sum
+      
       end
     end
     
