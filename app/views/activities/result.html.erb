@@ -34,15 +34,60 @@
     </tr>
     <tr>
       <th>実際値</th>
-      <td><%= @user_item[0].large1_sum %></td>
-      <td><%= @user_item[0].large2_sum %></td>
-      <td><%= @user_item[0].large3_sum %></td>
-      <td><%= @user_item[0].large4_sum %></td>
-      <td><%= @user_item[0].large5_sum %></td>
-      <td><%= @user_item[0].large6_sum %></td>
-      <td><%= @user_item[0].large7_sum %></td>
-      <td><%= @user_item[0].large8_sum %></td>
-      <td><%= @user_item[0].large9_sum %></td>
+      <% if @user_item[0].large1_flg == "1" %>
+        <td class="shortage"><%= @user_item[0].large1_sum %></td>
+      <% else %>
+        <td><%= @user_item[0].large1_sum %></td>
+      <% end %>
+      
+      <% if @user_item[0].large2_flg == "1" %>
+        <td class="shortage"><%= @user_item[0].large2_sum %></td>
+      <% else %>
+        <td><%= @user_item[0].large2_sum %></td>
+      <% end %>
+      
+      <% if @user_item[0].large3_flg == "1" %>
+        <td class="shortage"><%= @user_item[0].large3_sum %></td>
+      <% else %>
+        <td><%= @user_item[0].large3_sum %></td>
+      <% end %>
+      
+      <% if @user_item[0].large4_flg == "1" %>
+        <td class="shortage"><%= @user_item[0].large4_sum %></td>
+      <% else %>
+        <td><%= @user_item[0].large4_sum %></td>
+      <% end %>
+      
+      <% if @user_item[0].large5_flg == "1" %>
+        <td class="shortage"><%= @user_item[0].large5_sum %></td>
+      <% else %>
+        <td><%= @user_item[0].large5_sum %></td>
+      <% end %>
+      
+      <% if @user_item[0].large6_flg == "1" %>
+        <td class="shortage"><%= @user_item[0].large6_sum %></td>
+      <% else %>
+        <td><%= @user_item[0].large6_sum %></td>
+      <% end %>
+      
+      <% if @user_item[0].large7_flg == "1" %>
+        <td class="shortage"><%= @user_item[0].large7_sum %></td>
+      <% else %>
+        <td><%= @user_item[0].large7_sum %></td>
+      <% end %>
+      
+      <% if @user_item[0].large8_flg == "1" %>
+        <td class="shortage"><%= @user_item[0].large8_sum %></td>
+      <% else %>
+        <td><%= @user_item[0].large8_sum %></td>
+      <% end %>
+      
+      <% if @user_item[0].large9_flg == "1" %>
+        <td class="shortage"><%= @user_item[0].large9_sum %></td>
+      <% else %>
+        <td><%= @user_item[0].large9_sum %></td>
+      <% end %>
+      
       <td><%= @user_item[0].sum_sum %></td>
     </tr>
   </tbody>
