@@ -33,5 +33,7 @@
     <%= f.label :weight %>
       <%= f.text_field :weight %>
   </div>
-  <%= f.submit "Food add", class: "btn btn-primary" %>
+  <%= f.submit "品目を追加", class: "btn btn-primary" %>
+  <br><br>
+  <%= f.submit "品目一覧クリア", class: "btn btn-danger" , data: { confirm: "品目一覧を削除します。よろしいですか?" }, name: "delete" %>
 <% end %>

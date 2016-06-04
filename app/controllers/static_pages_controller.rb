@@ -3,4 +3,5 @@ class StaticPagesController < ApplicationController
     @user_food = current_user.user_foods.build if logged_in?
     @user_foods = current_user.user_foods.order(created_at: :desc) if logged_in?
   end
+
 end
