@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+  include RecommendRecipe
+  
   def result
     foodlist = current_user.user_foods.order(created_at: :desc)
     large1_sum = 0
@@ -26,83 +28,25 @@ class ActivitiesController < ApplicationController
     foodlist.each do |food|
       small = SmallItem.where(id: food.small_id)
       
-    case food.large_id
-      when "1" then
-        large1_sum += food.weight / small[0].weight * small[0].point
-        
-      puts "food.weight------------------------->"
-      puts food.weight
-      puts "large1_sum------------------------->"
-      puts large1_sum
-      
-      when "2" then
-        large2_sum += food.weight / small[0].weight * small[0].point
-        
-      puts "food.weight------------------------->"
-      puts food.weight
-      puts "large2_sum------------------------->"
-      puts large2_sum
-      
-      when "3" then
-        large3_sum += food.weight / small[0].weight * small[0].point
-        
-      puts "food.weight------------------------->"
-      puts food.weight
-      puts "small[0].weight------------------------->"
-      puts small[0].weight
-      puts "small[0].point------------------------->"
-      puts small[0].point
-      puts "large3_sum------------------------->"
-      puts large3_sum
-      
-      when "4" then
-        large4_sum += food.weight / small[0].weight * small[0].point
-        
-      puts "food.weight------------------------->"
-      puts food.weight
-      puts "large4_sum------------------------->"
-      puts large4_sum
-      
-      when "5" then
-        large5_sum += food.weight / small[0].weight * small[0].point
-        
-      puts "food.weight------------------------->"
-      puts food.weight
-      puts "large5_sum------------------------->"
-      puts large5_sum
-      
-      when "6" then
-        large6_sum += food.weight / small[0].weight * small[0].point
-        
-      puts "food.weight------------------------->"
-      puts food.weight
-      puts "large6_sum------------------------->"
-      puts large6_sum
-      
-      when "7" then
-        large7_sum += food.weight / small[0].weight * small[0].point
-        
-      puts "food.weight------------------------->"
-      puts food.weight
-      puts "large7_sum------------------------->"
-      puts large7_sum
-      
-      when "8" then
-        large8_sum += food.weight / small[0].weight * small[0].point
-        
-      puts "food.weight------------------------->"
-      puts food.weight
-      puts "large8_sum------------------------->"
-      puts large8_sum
-      
-      when "9" then
-        large9_sum += food.weight / small[0].weight * small[0].point
-        
-      puts "food.weight------------------------->"
-      puts food.weight
-      puts "large9_sum------------------------->"
-      puts large9_sum
-      
+      case food.large_id
+        when "1" then
+          large1_sum += food.weight / small[0].weight * small[0].point
+        when "2" then
+          large2_sum += food.weight / small[0].weight * small[0].point
+        when "3" then
+          large3_sum += food.weight / small[0].weight * small[0].point
+        when "4" then
+          large4_sum += food.weight / small[0].weight * small[0].point
+        when "5" then
+          large5_sum += food.weight / small[0].weight * small[0].point
+        when "6" then
+          large6_sum += food.weight / small[0].weight * small[0].point
+        when "7" then
+          large7_sum += food.weight / small[0].weight * small[0].point
+        when "8" then
+          large8_sum += food.weight / small[0].weight * small[0].point
+        when "9" then
+          large9_sum += food.weight / small[0].weight * small[0].point
       end
     end
     
@@ -163,5 +107,22 @@ class ActivitiesController < ApplicationController
     
     @user_item = current_user.user_items.order(created_at: :desc)
     @standard = current_user.standard
+    
+    #category_id取得
+    getCategoryId(LargeItem.all)
+    
   end
+  
+  def getCategoryId(large)
+    @category_id1 = call(large[0].large_val)
+    @category_id2 = call(large[1].large_val)
+    @category_id3 = call(large[2].large_val)
+    @category_id4 = call(large[3].large_val)
+    @category_id5 = call(large[4].large_val)
+    @category_id6 = call(large[5].large_val)
+    @category_id7 = call(large[6].large_val)
+    @category_id8 = call(large[7].large_val)
+    @category_id9 = call(large[8].large_val)    
+  end
+  
 end
