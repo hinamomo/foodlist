@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get 'signup' , to: 'users#new'
   get 'edit', to:'users#edit'
   get 'result', to:'activities#result'
-  get 'rakuten', to:'rakuten#search'
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

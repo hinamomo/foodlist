@@ -5,21 +5,60 @@
   <thead>
     <tr>
       <th></th>
-      <th><%= large[0].large_val %></th>
-      <th><%= large[1].large_val %></th>
+      <% if @user_item[0].large1_flg == "1" %>
+        <th><%= link_to large[0].large_val, "http://recipe.rakuten.co.jp/category/#{@category_id1}" %></th>
+      <% else %>
+        <th><%= large[0].large_val %></th>
+      <% end %>
+      
+      <% if @user_item[0].large2_flg == "1" %>
+        <th><%= link_to large[1].large_val, "http://recipe.rakuten.co.jp/category/#{@category_id2}" %></th>
+      <% else %>
+        <th><%= large[1].large_val %></th>
+      <% end %>
       
       <% if @user_item[0].large3_flg == "1" %>
-        <th><%= link_to large[2].large_val, rakuten_path("id=10") %></th>
+        <th><%= link_to large[2].large_val, "http://recipe.rakuten.co.jp/category/#{@category_id3}" %></th>
       <% else %>
         <th><%= large[2].large_val %></th>
       <% end %>
       
-      <th><%= large[3].large_val %></th>
-      <th><%= large[4].large_val %></th>
-      <th><%= large[5].large_val %></th>
-      <th><%= large[6].large_val %></th>
-      <th><%= large[7].large_val %></th>
-      <th><%= large[8].large_val %></th>
+      <% if @user_item[0].large4_flg == "1" %>
+        <th><%= link_to large[3].large_val, "http://recipe.rakuten.co.jp/category/#{@category_id4}" %></th>
+      <% else %>
+        <th><%= large[3].large_val %></th>
+      <% end %>
+      
+      <% if @user_item[0].large5_flg == "1" %>
+        <th><%= link_to large[4].large_val, "http://recipe.rakuten.co.jp/category/#{@category_id5}" %></th>
+      <% else %>
+        <th><%= large[4].large_val %></th>
+      <% end %>
+
+      <% if @user_item[0].large5_flg == "1" %>
+        <th><%= link_to large[5].large_val, "http://recipe.rakuten.co.jp/category/#{@category_id6}" %></th>
+      <% else %>
+        <th><%= large[5].large_val %></th>
+      <% end %>
+      
+      <% if @user_item[0].large6_flg == "1" %>
+        <th><%= link_to large[6].large_val, "http://recipe.rakuten.co.jp/category/#{@category_id7}" %></th>
+      <% else %>
+        <th><%= large[6].large_val %></th>
+      <% end %>
+      
+      <% if @user_item[0].large7_flg == "1" %>
+        <th><%= link_to large[7].large_val, "http://recipe.rakuten.co.jp/category/#{@category_id8}" %></th>
+      <% else %>
+        <th><%= large[7].large_val %></th>
+      <% end %>
+      
+      <% if @user_item[0].large8_flg == "1" %>
+        <th><%= link_to large[8].large_val, "http://recipe.rakuten.co.jp/category/#{@category_id9}" %></th>
+      <% else %>
+        <th><%= large[8].large_val %></th>
+      <% end %>
+      
       <th>合計</th>
     </tr>
   </thead>
