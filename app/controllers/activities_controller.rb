@@ -14,7 +14,8 @@ class ActivitiesController < ApplicationController
     #品目ポイント計算
     foodlist.each do |food|
       small = SmallItem.where(id: food.small_id)
-      point = food.weight / small[0].weight * small[0].point
+      point = (food.weight.to_f / small[0].weight * small[0].point).round(2)
+      
       attributes["large#{food.large_id}_sum"] += point
       attributes["sum_sum"] += point
     end
