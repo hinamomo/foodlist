@@ -55,13 +55,8 @@ class ActivitiesController < ApplicationController
     @large = LargeItem.all
     @category_id = []
     
-    # デバッグ
-    debug = call(@large[0].large_val)
-    logger.debug("debug--------------------------------")
-    logger.debug(debug)
-    
-    # (0..8).each do |i|
-    #   @category_id << call(@large[i].large_val)
-    # end
+    (0..8).each do |i|
+      @category_id << call(@large[i].large_val)
+    end
   end
 end
