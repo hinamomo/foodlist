@@ -27,6 +27,7 @@ class ActivitiesController < ApplicationController
                               activity_level: current_user.activity_level)
     
     #品目ポイント不足判定
+    
     (1..9).each do |i|
       if attributes["large#{i}_sum"] < activity[0].send("large#{i}") then
         attributes["large#{i}_flg"] = 1
@@ -56,7 +57,7 @@ class ActivitiesController < ApplicationController
     
     # デバッグ
     debug = call(@large[0].large_val)
-    logger.debug("debug-------------------------------->")
+    logger.debug("debug--------------------------------")
     logger.debug(debug)
     
     # (0..8).each do |i|

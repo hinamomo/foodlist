@@ -38,12 +38,16 @@ module RecommendRecipe
   def recipe_categories
     response = ""
     begin
-      response=open(RECIPE_CATEGORY_URL).read
+      # response=open(RECIPE_CATEGORY_URL).read
       #デバッグ
+      response=open(RECIPE_CATEGORY_URL)
       return response
     rescue => e
       logger.debug("debug--------------------------------")
-      logger.debug(response)
+      logger.debug(response.status)
+    ensure
+      logger.debug("debug--------------------------------")
+      logger.debug(response.status)
     end
     # results=JSON.parse(response.force_encoding('UTF-8'))
     # return results["result"]["medium"].map{|result| [result['categoryName'], "#{result['parentCategoryId']}-#{result['categoryId']}"]}.to_h
