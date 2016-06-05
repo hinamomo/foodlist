@@ -26,7 +26,8 @@ module RecommendRecipe
   private
   
   def hearing(food)
-    @results ||= recipe_categories
+    #@results ||= recipe_categories
+    @results = recipe_categories
     return @results
     #デバッグ
     # recipe_category_id = @results.fetch(DICTIONARY[food], nil)
@@ -35,9 +36,15 @@ module RecommendRecipe
 
   # APIからレシピのカテゴリなどを取得
   def recipe_categories
-    response=open(RECIPE_CATEGORY_URL).read
-    #デバッグ
-    return response
+    response = ""
+    begin
+      response=open(RECIPE_CATEGORY_URL).read
+      #デバッグ
+      return response
+    rescue => e
+      logger.debug("debug--------------------------------")
+      logger.debug(response)
+    end
     # results=JSON.parse(response.force_encoding('UTF-8'))
     # return results["result"]["medium"].map{|result| [result['categoryName'], "#{result['parentCategoryId']}-#{result['categoryId']}"]}.to_h
   end

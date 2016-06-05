@@ -53,8 +53,14 @@ class ActivitiesController < ApplicationController
     #category_id取得
     @large = LargeItem.all
     @category_id = []
-    (0..8).each do |i|
-      @category_id << call(@large[i].large_val)
-    end
+    
+    # デバッグ
+    debug = call(@large[0].large_val)
+    logger.debug("debug-------------------------------->")
+    logger.debug(debug)
+    
+    # (0..8).each do |i|
+    #   @category_id << call(@large[i].large_val)
+    # end
   end
 end
