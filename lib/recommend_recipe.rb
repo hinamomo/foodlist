@@ -34,8 +34,8 @@ module RecommendRecipe
   # APIからレシピのカテゴリなどを取得
   def recipe_categories
     begin
-      r=open(RECIPE_CATEGORY_URL)
       logger.debug(RECIPE_CATEGORY_URL)
+      r=open(RECIPE_CATEGORY_URL)
       logger.debug(r.status)
       response=r.read
       results=JSON.parse(response.force_encoding('UTF-8'))
