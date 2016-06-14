@@ -7,7 +7,7 @@ module UsersHelper
   end
   
   def icon_for(icon_id)
-    icon_path = "icon#{icon_id}"
+    icon_path = asset_path "icon#{icon_id}"
     image_tag(icon_path, class: "icon")
   end
 end
