@@ -1,2 +1,4 @@
-<%= collection_select :user_food, :middle_id, MiddleItem.where(large_item_id: large_id), :id, :middle_val, 
-          :prompt => "中分類を選択してください" %>
+<div class="styled-select blue semi-square">
+  <%= collection_select :user_food, :middle_id, MiddleItem.where(large_item_id: large_id), :id, :middle_val, 
+            :prompt => "中分類を選択してください" %>
+</div>

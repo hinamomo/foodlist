@@ -2,37 +2,39 @@
   <%= render 'shared/error_messages', object: f.object %>
   
   <%# 大分類 %>
-  <div class="field">
+  <%#div class="field">%>
     <%= f.label :large %><br>
-    <%= f.collection_select :large_id, LargeItem.all, :id, :large_val, 
-          :prompt => "大分類を選択してください" %>
-  </div>
+    <div class="styled-select blue semi-square">
+      <%= f.collection_select :large_id, LargeItem.all, :id, :large_val, 
+            :prompt => "大分類を選択してください" %>
+    </div>
+  <%#/div>
   
   <%# 中分類 %>
-  <div class="field">
+  <%#div class="field">%>
     <%= f.label :middle %><br>
     <% if @user_food.large_id.nil? %>
       <%= render 'shared/middle_item_select', {:user_food => f, :large_id => LargeItem.first.id} %>
     <% else %>
       <%= render 'shared/middle_item_select', {:user_food => f, :large_id => @user_food.large_id} %>
     <% end %>
-  </div>
+  <%#/div>
   
   <%# 小分類 %>
-  <div class="field">
+  <%#div class="field">%>
     <%= f.label :small %><br>
     <% if @user_food.middle_id.nil? %>
       <%= render 'shared/small_item_select', {:user_food => f, :middle_id => MiddleItem.first.id} %>
     <% else %>
       <%= render 'shared/small_item_select', {:user_food => f, :middle_id => @user_food.middle_id} %>
     <% end %>
-  </div>
+  <%#/div>
 
 　<%# 分量 %>
-  <div class="field">
+  <%#div class="field">%>
     <%= f.label :weight %>
       <%= f.text_field :weight %>
-  </div>
+  <%#/div>%>
   <%= f.submit "品目を追加", class: "btn btn-primary" %>
   <br><br>
   <%= f.submit "品目一覧クリア", class: "btn btn-danger" , data: { confirm: "品目一覧を削除します。よろしいですか?" }, name: "delete" %>
