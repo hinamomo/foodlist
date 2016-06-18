@@ -31,5 +31,7 @@ module Foodlist
       g.helper false
       g.test_framework false
     end
+    
+    config.web_console.whitelisted_ips = '125.30.56.217'
   end
 end
