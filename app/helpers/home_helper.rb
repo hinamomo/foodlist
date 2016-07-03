@@ -3,6 +3,7 @@ module HomeHelper
     case flash_type
     when 'success' then 'alert-success'
     when 'error'   then 'alert-danger'
+    when 'danger'   then 'alert-danger'
     when 'alert'   then 'alert-warning'
     when 'notice'  then 'alert-info'
     when 'info'  then 'alert-info'
