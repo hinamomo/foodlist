@@ -26,37 +26,44 @@ class ActivitiesController < ApplicationController
                               sex_id: current_user.sex_id, 
                               activity_level: current_user.activity_level)
     
-    #品目ポイント不足判定
-    
-    (1..9).each do |i|
-      if attributes["large#{i}_sum"] < activity[0].send("large#{i}") then
-        attributes["large#{i}_flg"] = 1
+    if activity[0].nil?
+      flash[:danger] = 'please input your profile from Settings'
+      @user_food = current_user.user_foods.build if logged_in?
+      @user_foods = current_user.user_foods.order(created_at: :desc) if logged_in?
+      render 'static_pages/home'
+    else
+      #品目ポイント不足判定
+      
+      (1..9).each do |i|
+        if attributes["large#{i}_sum"] < activity[0].send("large#{i}") then
+          attributes["large#{i}_flg"] = 1
+        end
       end
-    end
-    
-    #登録
-    current_user.user_items.create(attributes)
-    
-    @user_item = current_user.user_items.order(created_at: :desc)
-    
-    current_user_standard = current_user.standard
-    @standards = []
-    @large_flg = []
-    @large_sum = []
-    (1..9).each do |i|
-      @standards << current_user_standard[0].send("large#{i}") 
-      @large_flg << @user_item[0].send("large#{i}_flg")
-      @large_sum << @user_item[0].send("large#{i}_sum")
-    end
-    @standards << current_user_standard[0].sum
-    @large_sum << @user_item[0].sum_sum
-
-    #category_id取得
-    @large = LargeItem.all
-    @category_id = []
-    
-    (0..8).each do |i|
-      @category_id << call(@large[i].large_val)
+      
+      #登録
+      current_user.user_items.create(attributes)
+      
+      @user_item = current_user.user_items.order(created_at: :desc)
+      
+      current_user_standard = current_user.standard
+      @standards = []
+      @large_flg = []
+      @large_sum = []
+      (1..9).each do |i|
+        @standards << current_user_standard[0].send("large#{i}") 
+        @large_flg << @user_item[0].send("large#{i}_flg")
+        @large_sum << @user_item[0].send("large#{i}_sum")
+      end
+      @standards << current_user_standard[0].sum
+      @large_sum << @user_item[0].sum_sum
+  
+      #category_id取得
+      @large = LargeItem.all
+      @category_id = []
+      
+      (0..8).each do |i|
+        @category_id << call(@large[i].large_val)
+      end
     end
   end
 end
